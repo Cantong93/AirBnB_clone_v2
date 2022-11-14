@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""Starts Flask web app:
-    / - displays "Hello HBNB!"
-    /hbnb - displays "HBNB"
-    /c/<text> - display “C ” followed by the value of the text variable
-"""
+"""Starts Flask web app"""
 
 
 from flask import Flask
@@ -28,7 +24,7 @@ def hbnb():
 def c_message(text):
     """display “C ” followed by the value of the text variable"""
     text = text.replace('_', '')
-    return "C {}".format(text)
+    return "C %s" % text
 
 
 if __name__ == "__main__":
