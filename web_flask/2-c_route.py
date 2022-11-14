@@ -2,6 +2,7 @@
 """Starts Flask web app:
     / - displays "Hello HBNB!"
     /hbnb - displays "HBNB"
+    /c/<text> - display “C ” followed by the value of the text variable
 """
 
 
@@ -21,6 +22,13 @@ def hello_route():
 def hbnb():
     """Displays HBNB"""
     return "HBNB"
+
+
+@app.route('/c/<string:text>', strict_slashes=False)
+def c_message(text):
+    """display “C ” followed by the value of the text variable"""
+    text = text.replace('_', '')
+    return "C {}".format(text)
 
 
 if __name__ == "__main__":
