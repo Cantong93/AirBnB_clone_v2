@@ -1,21 +1,27 @@
 #!/usr/bin/python3
-"""Starts Flask web app that displays "Hello HBNB!"
+"""Starts Flask web app:
+    / - displays "Hello HBNB!"
+    /hbnb - displays "HBNB"
 """
+
+
 from flask import Flask
+
 
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
 def hello_route():
-    """Displays 'Hello HBNB!'"""
+    """Displays Hello HBNB!"""
     return "Hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """Displays 'HBNB'"""
+    """Displays HBNB"""
     return "Hello HBNB!"
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
