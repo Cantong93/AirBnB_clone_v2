@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''fcreates and distributes an archive to your web servers, using deploy():
+'''creates and distributes an archive to your web servers, using deploy():
 '''
 
 import os
@@ -7,7 +7,7 @@ from datetime import datetime
 from fabric.api import env, local, put, run, runs_once
 
 
-env.hosts = ['34.138.32.248', '3.226.74.205']
+env.hosts = ['100.25.205.198', '52.86.198.82']
 
 
 @runs_once

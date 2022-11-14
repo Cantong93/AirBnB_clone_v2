@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """Starts Flask web app
 Listening on 0.0.0.0:5000
 Route '/' displays "Hello HBNB!"
+=======
+"""Starts Flask web app that displays "Hello HBNB!"
+>>>>>>> 052ab6c5e78d1867e6f9815110ae00acbabf44f0
 """
 from flask import Flask
 

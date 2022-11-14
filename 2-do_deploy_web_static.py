@@ -9,7 +9,7 @@ from datetime import datetime
 from fabric.api import env, local, put, run, runs_once
 
 
-env.hosts = ['34.138.32.248', '3.226.74.205']
+env.hosts = ['100.25.205.198', '52.86.198.82']
 
 
 def do_deploy(archive_path):
@@ -34,8 +34,8 @@ def do_deploy(archive_path):
     try:
         print("Packing web_static to {}".format(output))
         local("tar -cvzf {} web_static".format(output))
-        archize_size = os.stat(output).st_size
-        print("web_static packed: {} -> {} Bytes".format(output, archize_size))
+        archive_size = os.stat(output).st_size
+        print("web_static packed: {} -> {} Bytes".format(output, archive_size))
     except Exception:
         output = None
     return output
