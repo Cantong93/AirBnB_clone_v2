@@ -1,25 +1,29 @@
 #!/usr/bin/python3
-"""Return string when navigating to root dir"""
-from flask import Flask, render_template, g
-import models
-from models.state import State
+"""Starts a flask app
+    listens to 0.0.0.0:5000
+    
+"""
+from models import storage
+from flask import Flask
+from flask import render_template
+
+app = Flask(__name__)
 
 
-app = Flask(__name__, template_folder='templates')
-
-
-@app.route('/states_list', strict_slashes=False)
-def list_states():
-    """view that lists all of the states"""
-    states = models.storage.all(State).values()
-    return render_template('7-states_list.html', states=states)
+@app.route("/states_list", strict_slashes=False)
+def states_list():
+    """Displays an HTML page with a list of all State objects in DBStorage.
+    States are sorted by name.
+    """
+    states = storage.all("State")
+    return render_template("7-states_list.html", states=states)
 
 
 @app.teardown_appcontext
-def tear_down(error):
-    """remove the current SQLAlchemy Session"""
-    models.storage.close()
+def teardown(exc):
+    """Remove the current SQLAlchemy session."""
+    storage.close()
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
