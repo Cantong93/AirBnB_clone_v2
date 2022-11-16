@@ -41,4 +41,7 @@ def is_it_a_number(n):
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
+<<<<<<< HEAD
     
+=======
+>>>>>>> aecb5e35a0592cc76f51b4d349130253814a8da8
